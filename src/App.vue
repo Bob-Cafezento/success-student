@@ -1,28 +1,28 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<template>
+  <header>
+    <RouterLink to="/" id="header">
+      <img src="@/assets/imagens/logo-branca.png" title="Logo" width="125" />
+    </RouterLink>
+
+    <div class="header-item">
+      <RouterLink id="cabecalho" to="/login">Login</RouterLink>
+    </div>
+    <div class="header-item">
+      <RouterLink id="cabecalho" to="/cadastro">Cadastro</RouterLink>
+    </div>
+
+    <div class="header-item">
+      <RouterLink id="cabecalho" to="/conta">Conta</RouterLink>
+    </div>
+
+    <div class="header-item">
+      <RouterLink id="cabecalho" to="/ajuda">Ajuda</RouterLink>
+    </div>
+  </header>
+
+  <RouterView />
+</template>
+
