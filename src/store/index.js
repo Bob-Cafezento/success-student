@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
 
 import { auth } from "./auth";
+import { formulario } from "./formulario";
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ const vuexLocal = new VuexPersistence({
 
 const modules = {
   auth,
+  formulario,
 };
 
 export default new Vuex.Store({
