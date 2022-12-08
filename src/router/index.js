@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import store from "../store";
+import store from "../store";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import AjudaView from "../views/AjudaView.vue";
@@ -12,32 +12,13 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    component: () => import("@/layouts/BlankView.vue"),
-    meta: {
-      auth: false,
-    },
-    children: [
-      {
-        path: "/login",
-        name: "login",
-        component: LoginView,
-      },
-      {
-        path: "/cadastro",
-        name: "cadastro",
-        component: CadastroView,
-      },
-    ],
-  },
-  {
-    path: "/",
     component: () => import("@/layouts/DefaultView.vue"),
     meta: {
       auth: true,
     },
     children: [
       {
-        path: "/",
+        path: "",
         name: "home",
         component: HomeView,
       },
@@ -83,6 +64,25 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/",
+    component: () => import("@/layouts/BlankView.vue"),
+    meta: {
+      auth: false,
+    },
+    children: [
+      {
+        path: "/login",
+        name: "login",
+        component: LoginView,
+      },
+      {
+        path: "/cadastro",
+        name: "cadastro",
+        component: CadastroView,
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({
@@ -91,18 +91,18 @@ const router = new VueRouter({
   routes,
 });
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some((record) => record.meta.auth)) {
-//     if (!store.state.auth.loggedIn) {
-//       next({
-//         path: "/login",
-//       });
-//     } else {
-//       next();
-//     }
-//   } else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.auth)) {
+    if (!store.state.auth.loggedIn) {
+      next({
+        path: "/login",
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
+});
 
 export default router;
