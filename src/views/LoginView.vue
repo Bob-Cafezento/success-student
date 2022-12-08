@@ -1,5 +1,5 @@
 <script>
-import axios from "axios";
+import { mapActions } from "vuex";
 
 export default {
   data() {
@@ -8,13 +8,14 @@ export default {
     };
   },
   methods: {
+    ...mapActions("auth", ["login"]),
+
     async logarUsuario() {
-      console.log(this.auth)
       try {
-        await axios.post("https://successstudent.pythonanywhere.com/auth/login/", this.auth);
-        alert("Usuario logado com sucesso");
+        await this.login(this.auth);
+        this.$router.push({ path: "/" });
       } catch (e) {
-        alert("algum erro");
+        console.log(e);
       }
     },
   },
@@ -35,6 +36,7 @@ export default {
             type="text"
             v-model="auth.username"
             id="username"
+            @keyup.enter="logarUsuario"
             placeholder="Digite seu username"
           />
           <i class="fas fa-exclamation-circle"></i>
@@ -47,13 +49,16 @@ export default {
           <input
             type="password"
             v-model="auth.password"
+            @keyup.enter="logarUsuario"
             placeholder="Digite sua senha"
           />
           <i class="fas fa-exclamation-circle"></i>
           <i class="fas fa-check-circle"></i>
           <small></small>
         </div>
-        <button type="submit" class="botao" @click="logarUsuario">Enviar</button>
+        <button type="submit" class="botao" @click="logarUsuario">
+          Enviar
+        </button>
       </form>
     </div>
   </div>

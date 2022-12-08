@@ -75,7 +75,7 @@ export const auth = {
     async logout({ commit }) {
       await authService.logout();
       commit("setLogout");
-      location.reload();
+      // location.reload();
     },
     async deleteUser({ commit }) {
       try {

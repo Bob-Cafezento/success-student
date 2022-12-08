@@ -1,21 +1,21 @@
 <script>
-import axios from "axios";
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
-      auth: {},
+      user: {},
     };
   },
   methods: {
+    ...mapActions("auth", ["register"]),
+
     async criarUsuario() {
       try {
-        await axios.post(
-          "https://successstudent.pythonanywhere.com/auth/registration/",
-          this.auth
-        );
-        alert("Usuario criado com sucesso");
+        await this.register(this.user);
+        this.$router.push({ path: "/" });
       } catch (e) {
-        alert("Algum erro");
+        console.log(e);
       }
     },
   },
@@ -34,8 +34,9 @@ export default {
           <label for="username">Nome da conta</label>
           <input
             type="text"
-            v-model="auth.username"
+            v-model="user.username"
             id="username"
+            @keyup.enter="criarUsuario"
             placeholder="Digite seu username"
           />
           <i class="fas fa-exclamation-circle"></i>
@@ -47,8 +48,9 @@ export default {
           <label for="email">E-mail</label>
           <input
             type="text"
-            v-model="auth.email"
+            v-model="user.email"
             id="email"
+            @keyup.enter="criarUsuario"
             placeholder="Digite seu E-mail"
           />
           <i class="fas fa-exclamation-circle"></i>
@@ -60,8 +62,9 @@ export default {
           <label for="password">Senha</label>
           <input
             type="password"
-            v-model="auth.password1"
+            v-model="user.password1"
             id="password"
+            @keyup.enter="criarUsuario"
             placeholder="Digite sua senha"
           />
           <i class="fas fa-exclamation-circle"></i>
@@ -73,8 +76,9 @@ export default {
           <label for="password">Confirme a sua senha</label>
           <input
             type="password"
-            v-model="auth.password2"
+            v-model="user.password2"
             id="password"
+            @keyup.enter="criarUsuario"
             placeholder="Confirme a sua senha"
           />
           <i class="fas fa-exclamation-circle"></i>
