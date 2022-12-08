@@ -8,6 +8,12 @@ import CadastroView from "../views/CadastroView.vue";
 
 Vue.use(VueRouter);
 
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes,
+});
+
 const routes = [
   {
     path: "/",
@@ -66,15 +72,12 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
-});
-
-export default router;
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [],
 });
+
+
+
+export default router;
+
