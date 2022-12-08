@@ -56,9 +56,13 @@ export default {
           <i class="fas fa-check-circle"></i>
           <small></small>
         </div>
+
         <button type="submit" class="botao" @click="logarUsuario">
           Enviar
         </button>
+        <div id="cadastro" @click="$router.push('/cadastro')">
+          Ainda não tem conta?
+        </div>
       </form>
     </div>
   </div>
@@ -83,7 +87,12 @@ export default {
   color: #f0f0f0;
   opacity: 0.9;
 }
-
+div#cadastro {
+  margin-top: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
 .container {
   background-color: #3b6863;
   border-radius: 10px;
