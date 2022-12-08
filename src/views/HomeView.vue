@@ -1,8 +1,6 @@
-
-
 <template>
   <!--Aqui nós temos o resto do conteúdo-->
-  
+
   <div id="abrangent">
     <main>
       <div class="box" @click="$router.push('/portugues')">
@@ -34,6 +32,3 @@
   height: 200px;
 }
 </style>
-
-
-

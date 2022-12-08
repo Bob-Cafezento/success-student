@@ -9,7 +9,10 @@ export default {
   methods: {
     async criarUsuario() {
       try {
-        await axios.post("https://successstudent.pythonanywhere.com/auth/registration/", this.auth);
+        await axios.post(
+          "https://successstudent.pythonanywhere.com/auth/registration/",
+          this.auth
+        );
         alert("Usuario criado com sucesso");
       } catch (e) {
         alert("Algum erro");
@@ -79,7 +82,9 @@ export default {
           <small></small>
         </div>
 
-        <button type="submit" class="botao" @click="criarUsuario">Enviar</button>
+        <button type="submit" class="botao" @click="criarUsuario">
+          Enviar
+        </button>
       </form>
     </div>
   </div>
