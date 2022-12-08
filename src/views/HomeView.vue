@@ -1,6 +1,8 @@
+
+
 <template>
   <!--Aqui nós temos o resto do conteúdo-->
-  <h1>SUCCESS STUDENT</h1>
+  
   <div id="abrangent">
     <main>
       <div class="box" @click="$router.push('/portugues')">
@@ -34,14 +36,4 @@
 </style>
 
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
-</script>

@@ -1,3 +1,4 @@
+
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
@@ -8,11 +9,21 @@ import CadastroView from "../views/CadastroView.vue";
 
 Vue.use(VueRouter);
 
+export default router
+
+
+
 const router = new VueRouter({
+  createRouter(
+    history: createWebHistory,(import.meta.env.BASE_URL),
+    routes, [],
+  )
   mode: "history",
-  base: process.env.BASE_URL,
+  base; process.env.BASE_URL,
   routes,
-});
+
+})
+
 
 const routes = [
   {
@@ -72,12 +83,4 @@ const routes = [
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [],
-});
-
-
-
-export default router;
 
