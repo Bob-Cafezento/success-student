@@ -2,7 +2,7 @@ import axios from "axios";
 
 class FormularioService {
   async create(formInfo) {
-    const { data } = await axios.post("api/formularios/", userInfo);
+    const { data } = await axios.post("api/formularios/", formInfo);
     return data;
   }
   async read() {
