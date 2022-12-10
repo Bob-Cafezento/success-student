@@ -219,7 +219,6 @@ input {
 input#text:hover {
   box-shadow: 0 4px 40px var(--preto-claro);
 }
-
 textarea {
   margin: 30px;
   width: 60%;

@@ -38,6 +38,7 @@ export const auth = {
         const userToken = await authService.login(userForm);
         commit("setToken", userToken);
         commit("setHeaders");
+        alert("Login realizado com sucesso!");
         dispatch("getUser");
         return Promise.resolve(userToken);
       } catch (e) {
@@ -50,6 +51,7 @@ export const auth = {
         const userToken = await authService.create(userForm);
         commit("setToken", userToken);
         commit("setHeaders");
+        alert("Sua conta foi criada com sucesso!");
         dispatch("getUser");
         return Promise.resolve(userToken);
       } catch (e) {
@@ -75,12 +77,13 @@ export const auth = {
     async logout({ commit }) {
       await authService.logout();
       commit("setLogout");
-      // location.reload();
+      location.reload();
     },
     async deleteUser({ commit }) {
       try {
         const inactivatedUser = { is_active: false };
         await authService.delete(inactivatedUser);
+        location.reload();
         commit("setLogout");
       } catch (e) {
         return Promise.reject(e);

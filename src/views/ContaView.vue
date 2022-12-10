@@ -1,18 +1,39 @@
 <script>
 import axios from "axios";
+import { mapActions, mapState } from "vuex";
 
 export default {
+  created() {
+    this.usuario = { ...this.user };
+  },
   data() {
     return {
-      auth: {},
+      usuario: {},
+      password: {},
     };
   },
+  computed: {
+    ...mapState("auth", ["user"]),
+  },
   methods: {
+    ...mapActions("auth", ["updateUser", "deleteUser"]),
+
+    async salvarPerfil() {
+      try {
+        if (this.usuario.username === this.user.username)
+          delete this.usuario.username;
+        this.updateUser(this.usuario);
+        alert("Usuario salvo com sucesso");
+      } catch (e) {
+        console.log(e);
+        alert("algum erro");
+      }
+    },
     async deletarConta() {
       try {
-        await axios.post("auth/user/", { is_active: false });
-        alert("Usuario deletado com sucesso");
+        this.deleteUser();
       } catch (e) {
+        console.log(e);
         alert("algum erro");
       }
     },
@@ -35,19 +56,35 @@ export default {
         <img src="@/assets/imagens/CONTA.png" width="200" />
         Tenha controle da sua conta
       </div>
+      <div class="big-box">
+        <h2 class="line">Informações pessoais</h2>
+        <div class="box">
+          Nome de usuário
+          <input type="text" v-model="usuario.username" /><br />
+          Seu nome
+          <input type="text" v-model="usuario.first_name" /><br />
+
+          Seu sobrenome
+          <input type="text" v-model="usuario.last_name" /><br />
+          <button type="submit" class="botao" @click="salvarPerfil">
+            Enviar
+          </button>
+        </div>
+      </div>
 
       <div class="big-box">
-        <h2>Altere sua senha</h2>
+        <h2 class="line">Altere sua senha</h2>
         <div class="box">
-          Coloque a sua senha antiga
-          <input type="password" v-model="auth.password1" /><br />
-
           Coloque a sua senha nova
-          <input type="password" v-model="auth.password2" /><br />
+          <input type="password" v-model="password.new_password1" /><br />
+
+          Confirme a sua senha nova
+          <input type="password" v-model="password.new_password2" /><br />
+
           <button type="submit" class="botao" @click="alterarSenha">
             Enviar
           </button>
-          <button type="submit" class="botao" @click="deletarConta">
+          <button type="submit" class="botao-excluir" @click="deletarConta">
             Deletar conta
           </button>
         </div>
@@ -57,6 +94,10 @@ export default {
 </template>
 
 <style scoped>
+.line {
+  line-height: 1.2em;
+  margin: 0.4em;
+}
 .big-box-conta img {
   z-index: inherit;
 }
@@ -93,7 +134,7 @@ export default {
   cursor: pointer;
 }
 .big-box:hover {
-  box-shadow: 0 0 30px #7eb3a9;
+  box-shadow: none;
   cursor: pointer;
 }
 .box input {
@@ -106,12 +147,34 @@ export default {
   background-color: #282828;
   border: 2px solid #282828;
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   width: 100%;
   border-radius: 10px;
   padding: 10px;
   margin-top: 20px;
   cursor: pointer;
+}
+.botao-excluir {
+  color: white;
+  background-color: rgb(176, 10, 15);
+  font-size: 20px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+input {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-family: Garamond;
+  font-size: 30px;
+  box-shadow: 0 2px 20px var(--preto-claro);
+  background-color: white;
 }
 h2 {
   font-size: 40px;

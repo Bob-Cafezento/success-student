@@ -1,18 +1,11 @@
 <script>
-import { mapActions, mapMutations } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
-  created() {
-    this.setLogout();
-    this.unsetHeaders();
-  },
-  data() {
-    return {
-      auth: {},
-    };
-  },
+  data: () => ({
+    auth: {},
+  }),
   methods: {
-    ...mapMutations("auth", ["setLogout", "unsetHeaders"]),
     ...mapActions("auth", ["login"]),
 
     async logarUsuario() {
@@ -95,6 +88,7 @@ div#cadastro {
   font-size: 20px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .container {
   background-color: #3b6863;
@@ -158,32 +152,5 @@ div#cadastro {
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
-}
-
-/* Error and Success */
-.form-control.success input {
-  border-color: #2ecc71;
-}
-
-.form-control.error input {
-  border-color: #e74c3c;
-}
-
-.form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
-}
-
-.form-control.error small {
-  visibility: visible;
-  color: #e74c3c;
-}
-.form button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 </style>

@@ -86,9 +86,10 @@ export default {
           <small></small>
         </div>
 
-        <button type="submit" class="botao" @click="criarUsuario">
+        <button type="submit" class="botao" @click.prevent="criarUsuario">
           Enviar
         </button>
+        <div id="cadastro" @click="$router.push('/login')">Já tem conta?</div>
       </form>
     </div>
   </div>
@@ -114,7 +115,13 @@ export default {
   color: #f0f0f0;
   opacity: 0.9;
 }
-
+div#cadastro {
+  margin-top: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
 .container {
   background-color: #3b6863;
   border-radius: 10px;
