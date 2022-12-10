@@ -6,248 +6,140 @@
         Adicione um Título para este Formulário<br />
         <input id="text" type="text" v-model="formulario.titulo" />
       </div>
-      <div class="box">
-        Adicione a primeira pergunta<br />
-        <textarea type="text" v-model="formulario.pergunta1"></textarea><br />
-
-        Adicione as alternativas<br />
-        <input id="text" type="text" v-model="formulario.alternativa1" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa2" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa3" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa4" /><br />
-
-        Coloque qual das alternativas é a correta:<br />
-        <select name="select">
-          <option value="valor1" selected>Alternativa 1</option>
-          <option value="valor2">Alternativa 2</option>
-          <option value="valor3">Alternativa 3</option>
-          <option value="valor3">Alternativa 4</option>
-        </select>
-      </div>
-      <div class="box">
-        Adicione a segunda pergunta<br />
-        <textarea type="text" v-model="formulario.pergunta2"></textarea><br />
-
-        Adicione as alternativas<br />
-        <input id="text" type="text" v-model="formulario.alternativa5" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa6" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa7" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa8" /><br />
-
-        Coloque qual das alternativas é a correta:<br />
-        <select name="select">
-          <option value="valor1" selected>Alternativa 1</option>
-          <option value="valor2">Alternativa 2</option>
-          <option value="valor3">Alternativa 3</option>
-          <option value="valor3">Alternativa 4</option>
-        </select>
-      </div>
-      <div class="box">
-        Adicione a terceira pergunta<br />
-        <textarea type="text" v-model="formulario.pergunta3"></textarea><br />
-
-        Adicione as alternativas<br />
-        <input id="text" type="text" v-model="formulario.alternativa9" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa10" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa11" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa12" /><br />
-
-        Coloque qual das alternativas é a correta:<br />
-        <select name="select">
-          <option value="valor1" selected>Alternativa 1</option>
-          <option value="valor2">Alternativa 2</option>
-          <option value="valor3">Alternativa 3</option>
-          <option value="valor3">Alternativa 4</option>
-        </select>
-      </div>
-      <div class="box">
-        Adicione a quarta pergunta<br />
-        <textarea type="text" v-model="formulario.pergunta4"></textarea><br />
-
-        Adicione as alternativas<br />
-        <input id="text" type="text" v-model="formulario.alternativa13" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa14" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa15" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa16" /><br />
-
-        Coloque qual das alternativas é a correta:<br />
-        <select name="select">
-          <option value="valor1" selected>Alternativa 1</option>
-          <option value="valor2">Alternativa 2</option>
-          <option value="valor3">Alternativa 3</option>
-          <option value="valor3">Alternativa 4</option>
-        </select>
-      </div>
-      <div class="box">
-        Adicione a quinta pergunta <br />
-        <textarea type="text" v-model="formulario.pergunta5"></textarea><br />
-
-        Adicione as alternativas<br />
-        <input id="text" type="text" v-model="formulario.alternativa17" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa18" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa19" /><br />
-        <input id="text" type="text" v-model="formulario.alternativa20" /><br />
-
-        Coloque qual das alternativas é a correta:<br />
-        <select name="select">
-          <option value="valor1" selected>Alternativa 1</option>
-          <option value="valor2">Alternativa 2</option>
-          <option value="valor3">Alternativa 3</option>
-          <option value="valor3">Alternativa 4</option></select
+      <div v-for="(pergunta, index) in perguntas" :key="index" class="box">
+        Adicione mais uma pergunta<br />
+        <textarea
+          type="text"
+          v-model="perguntas[index].texto_pergunta"
+        ></textarea
         ><br />
+
+        Adicione as alternativas<br />
+        <div class="alternativa">
+          <input
+            id="text"
+            type="text"
+            v-model="alternativas[index].alternativa1.texto_alternativa"
+          />
+          <input
+            type="checkbox"
+            v-model="alternativas[index].alternativa1.esta_correta"
+            class="radio"
+            :value="true"
+            :name="'alternativa' + index"
+          />
+          <br />
+        </div>
+        <div class="alternativa">
+          <input
+            id="text"
+            type="text"
+            v-model="alternativas[index].alternativa2.texto_alternativa"
+          />
+          <input
+            type="checkbox"
+            v-model="alternativas[index].alternativa2.esta_correta"
+            class="radio"
+            :value="true"
+            :name="'alternativa' + index"
+          />
+          <br />
+        </div>
+        <div class="alternativa">
+          <input
+            id="text"
+            type="text"
+            v-model="alternativas[index].alternativa3.texto_alternativa"
+          />
+          <input
+            type="checkbox"
+            v-model="alternativas[index].alternativa3.esta_correta"
+            class="radio"
+            :value="true"
+            :name="'alternativa' + index"
+          />
+          <br />
+        </div>
+        <div class="alternativa">
+          <input
+            id="text"
+            type="text"
+            v-model="alternativas[index].alternativa4.texto_alternativa"
+          />
+          <input
+            type="checkbox"
+            v-model="alternativas[index].alternativa4.esta_correta"
+            class="radio"
+            :value="true"
+            :name="'alternativa' + index"
+          />
+          <br />
+        </div>
+        <br />
+
+        Caso necessário, remova a pergunta:<br />
+        <input
+          type="submit"
+          id="text"
+          value="Excluir"
+          class="excluir"
+          @click="deletarPergunta(index)"
+        />
       </div>
+      <div class="box">
+        Adicione mais uma pergunta
+        <br />
+        <input
+          @click="adicionarPergunta"
+          type="submit"
+          class="submit"
+          value="Adicionar"
+        />
+      </div>
+
       <div class="box">
         Quando o Formulário e o conteúdo estiverem prontos, clique abaixo para
         salvar:<br />
-        <input type="submit" class="submit" />
+        <input
+          type="submit"
+          @click="submitForm"
+          class="submit"
+          value="Salvar"
+        />
       </div>
-    </main>
-
-    <h1>Visão Prévia do formulário</h1>
-
-    <main class="resumo">
-      <h1 class="titulo">{{ formulario.titulo }}</h1>
-      <br />
-      <!--Primeira pergunta-->
-      {{ formulario.pergunta1 }}<br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta1" value="" />{{
-          formulario.alternativa1
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta1" value="" />{{
-          formulario.alternativa2
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta1" value="" />{{
-          formulario.alternativa3
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta1" value="" />{{
-          formulario.alternativa4
-        }}
-      </div>
-      <br />
-      <!--Segunda pergunta-->
-      {{ formulario.pergunta2 }}<br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta2" value="" />{{
-          formulario.alternativa5
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta2" value="" />{{
-          formulario.alternativa6
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta2" value="" />{{
-          formulario.alternativa7
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta2" value="" />{{
-          formulario.alternativa8
-        }}
-      </div>
-      <br />
-      <!--Terceira pergunta-->
-      {{ formulario.pergunta3 }}<br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta3" value="" />{{
-          formulario.alternativa9
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta3" value="" />{{
-          formulario.alternativa10
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta3" value="" />{{
-          formulario.alternativa11
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta3" value="" />{{
-          formulario.alternativa12
-        }}
-      </div>
-      <br />
-      <!--Quarta pergunta-->
-      {{ formulario.pergunta4 }}<br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta4" value="" />{{
-          formulario.alternativa13
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta4" value="" />{{
-          formulario.alternativa14
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta4" value="" />{{
-          formulario.alternativa15
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta4" value="" />{{
-          formulario.alternativa16
-        }}
-      </div>
-      <br />
-      <!--Segunda pergunta-->
-      {{ formulario.pergunta5 }}<br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta5" value="" />{{
-          formulario.alternativa17
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta5" value="" />{{
-          formulario.alternativa18
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta5" value="" />{{
-          formulario.alternativa19
-        }}
-      </div>
-      <br />
-      <div>
-        <input type="radio" class="radio" name="Pergunta5" value="" />{{
-          formulario.alternativa20
-        }}
-      </div>
-      <br />
     </main>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      formulario: {},
-    };
+  data: () => ({
+    formulario: {},
+    perguntas: [],
+    alternativas: [],
+  }),
+  methods: {
+    adicionarPergunta() {
+      this.perguntas.push({});
+      this.alternativas.push({
+        alternativa1: {},
+        alternativa2: {},
+        alternativa3: {},
+        alternativa4: {},
+      });
+    },
+    deletarPergunta(perguntaDeletada) {
+      this.perguntas = this.perguntas.filter(
+        (x, indexPergunta) => indexPergunta != perguntaDeletada
+      );
+      this.alternativas = this.alternativas.filter(
+        (x, indexAltertivas) => indexAltertivas != perguntaDeletada
+      );
+    },
+    submitForm() {
+      console.log(this.perguntas);
+      console.log(this.alternativas);
+    },
   },
 };
 </script>
@@ -266,6 +158,25 @@ export default {
 }
 .submit {
   background-color: rgb(18, 151, 177);
+}
+.excluir {
+  background-color: rgb(176, 10, 15);
+  color: white;
+}
+.alternativa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.radio {
+  size-adjust: border;
+  width: 42px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 10px;
+  font-family: Garamond;
+  font-size: 30px;
+  box-shadow: none;
 }
 
 h1 {
@@ -288,6 +199,7 @@ select {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 20px var(--preto-claro);
+  background-color: white;
 }
 select:hover {
   box-shadow: 0 4px 60px var(--preto-claro);
@@ -302,20 +214,10 @@ input {
   font-family: Garamond;
   font-size: 30px;
   box-shadow: 0 2px 20px var(--preto-claro);
+  background-color: white;
 }
 input#text:hover {
   box-shadow: 0 4px 40px var(--preto-claro);
-}
-.radio {
-  margin-left: 50px;
-  size-adjust: border;
-  width: 42px;
-  margin-top: 0;
-  border: none;
-  border-radius: 10px;
-  font-family: Garamond;
-  font-size: 30px;
-  box-shadow: none;
 }
 
 textarea {
@@ -326,6 +228,7 @@ textarea {
   font-family: Garamond;
   font-size: 20px;
   box-shadow: 0 4px 20px var(--preto-claro);
+  background-color: white;
 }
 textarea:hover {
   box-shadow: 0 4px 60px var(--preto-claro);

@@ -2,6 +2,7 @@
   <!--Aqui nós temos o resto do conteúdo-->
 
   <div id="abrangent">
+    <h1>SUCCESS STUDENT</h1>
     <main>
       <div class="box" @click="$router.push('/portugues')">
         <img src="@/assets/imagens/Linguagens.png" /><br />

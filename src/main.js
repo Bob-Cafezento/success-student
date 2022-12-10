@@ -5,6 +5,7 @@ import router from "./router";
 import store from "./store";
 
 import "./plugins/axios";
+import "./assets/main.css";
 
 Vue.config.productionTip = false;
 Vue.prototype.$store = store;

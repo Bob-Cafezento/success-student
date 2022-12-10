@@ -10,7 +10,7 @@ export default {
   methods: {
     async deletarConta() {
       try {
-        await axios.post("https://successstudent.pythonanywhere.com/auth/user/", { is_active: false });
+        await axios.post("auth/user/", { is_active: false });
         alert("Usuario deletado com sucesso");
       } catch (e) {
         alert("algum erro");
@@ -18,7 +18,7 @@ export default {
     },
     async alterarSenha() {
       try {
-        await axios.post("https://successstudent.pythonanywhere.com/auth/password/change/", this.auth);
+        await axios.post("auth/password/change/", this.auth);
         alert("Senha alterada com sucesso");
       } catch (e) {
         alert("algum erro");
@@ -36,17 +36,20 @@ export default {
         Tenha controle da sua conta
       </div>
 
-
       <div class="big-box">
         <h2>Altere sua senha</h2>
         <div class="box">
           Coloque a sua senha antiga
-          <input type="password" v-model="auth.password1"/><br />
+          <input type="password" v-model="auth.password1" /><br />
 
           Coloque a sua senha nova
-          <input type="password" v-model="auth.password2"/><br />
-          <button type="submit" class="botao" @click="alterarSenha">Enviar</button>
-          <button type="submit" class="botao" @click="deletarConta">Deletar conta</button>
+          <input type="password" v-model="auth.password2" /><br />
+          <button type="submit" class="botao" @click="alterarSenha">
+            Enviar
+          </button>
+          <button type="submit" class="botao" @click="deletarConta">
+            Deletar conta
+          </button>
         </div>
       </div>
     </main>

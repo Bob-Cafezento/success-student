@@ -84,6 +84,7 @@ select {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 20px var(--preto-claro);
+  background-color: white;
 }
 select:hover {
   box-shadow: 0 4px 60px var(--preto-claro);
@@ -97,6 +98,7 @@ input {
   font-size: 30px;
   margin-bottom: 20px;
   box-shadow: 0 2px 20px var(--preto-claro);
+  background-color: white;
 }
 input:hover {
   box-shadow: 0 4px 60px var(--preto-claro);
@@ -108,6 +110,7 @@ textarea {
   font-family: Garamond;
   font-size: 30px;
   box-shadow: 0 4px 20px var(--preto-claro);
+  background-color: white;
 }
 textarea:hover {
   box-shadow: 0 4px 60px var(--preto-claro);

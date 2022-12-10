@@ -63,7 +63,7 @@ export default {
           <input
             type="password"
             v-model="user.password1"
-            id="password"
+            id="password1"
             @keyup.enter="criarUsuario"
             placeholder="Digite sua senha"
           />
@@ -77,7 +77,7 @@ export default {
           <input
             type="password"
             v-model="user.password2"
-            id="password"
+            id="password2"
             @keyup.enter="criarUsuario"
             placeholder="Confirme a sua senha"
           />

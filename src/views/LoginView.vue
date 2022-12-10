@@ -1,13 +1,18 @@
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapMutations } from "vuex";
 
 export default {
+  created() {
+    this.setLogout();
+    this.unsetHeaders();
+  },
   data() {
     return {
       auth: {},
     };
   },
   methods: {
+    ...mapMutations("auth", ["setLogout", "unsetHeaders"]),
     ...mapActions("auth", ["login"]),
 
     async logarUsuario() {
@@ -29,7 +34,7 @@ export default {
         <h2>Entre novamente no Success Student</h2>
       </div>
 
-      <form id="form" class="form">
+      <form id="form" class="form" @submit.prevent="logarUsuario">
         <div class="form-control">
           <label for="email">Username</label>
           <input
@@ -57,9 +62,7 @@ export default {
           <small></small>
         </div>
 
-        <button type="submit" class="botao" @click="logarUsuario">
-          Enviar
-        </button>
+        <button type="submit" class="botao">Enviar</button>
         <div id="cadastro" @click="$router.push('/cadastro')">
           Ainda não tem conta?
         </div>
