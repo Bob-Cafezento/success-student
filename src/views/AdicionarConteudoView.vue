@@ -30,10 +30,6 @@
         <br />
         <textarea v-model="conteudo.paragrafo" wrap="hard"></textarea><br />
       </div>
-
-      <div class="box" @click="$router.push('/adicionarformulario')">
-        Clique aqui para adicionar um formulário ao seu conteúdo <br />
-      </div>
     </main>
 
     <h1>Visão Prévia do conteúdo</h1>

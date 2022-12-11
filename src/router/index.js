@@ -18,7 +18,7 @@ const routes = [
     },
     children: [
       {
-        path: "",
+        path: "/",
         name: "home",
         component: HomeView,
       },
@@ -62,6 +62,11 @@ const routes = [
         name: "adicionarformulario",
         component: () => import("../views/AdicionarFormularioView.vue"),
       },
+      {
+        path: "/conteudo",
+        name: "conteudo",
+        component: () => import("../views/ConteudoView.vue")
+      }
     ],
   },
   {
