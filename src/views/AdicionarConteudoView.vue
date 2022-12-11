@@ -45,7 +45,7 @@
     <main class="resumo">
       <h4 class="paragrafo">{{ conteudo.disciplina }}</h4>
       <br />
-      <h1 class="titulo">{{ conteudo.titulo }}</h1>
+      <h1 class="titulo">{{ conteudo.nome }}</h1>
       <br />
       <h4 class="paragrafo">{{ conteudo.paragrafo }}</h4>
     </main>

@@ -68,8 +68,8 @@ export default {
 .body {
   width: 100%;
   min-height: 100vh;
-  background: url(@/assets/imagens/grupo-de-estudo-ConversImagem.jpg) 
-  no-repeat center center;
+  background: url(@/assets/imagens/grupo-de-estudo-ConversImagem.jpg) no-repeat
+    center center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -97,6 +97,10 @@ div#cadastro {
   background-color: #eee;
   padding: 20px;
   color: #000000;
+}
+
+h2 {
+  line-height: 1.4em;
 }
 
 .form {

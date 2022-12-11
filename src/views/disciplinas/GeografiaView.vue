@@ -2,7 +2,7 @@
   <div id="abrangent">
     <main class="resumo">
       <div class="box" @click="$router.push('/adicionarformulario')">
-        Clique aqui para adicionar um formulário ao seu conteúdo <br />
+        Clique aqui para adicionar um formulário a um dos conteúdos <br />
       </div>
       <br />
       <div v-for="(conteudo, index) in todosConteudos" :key="index" class="box">
@@ -36,6 +36,4 @@ export default {
   width: 90%;
   color: black;
 }
-
-
 </style>

@@ -3,6 +3,32 @@
     <h1>SUCCESS STUDENT</h1>
     <main>
       <div class="box">
+        Selecione qual será a disciplina para este Formulário<br />
+        <select v-model="disciplina">
+          <option value="Português">Português</option>
+          <option value="Matemática">Matemática</option>
+          <option value="História">História</option>
+          <option value="Geografia">Geografia</option></select
+        ><br />
+      </div>
+      <div class="box">
+        Selecione qual será a conteúdo para este Formulário<br />
+        <br />
+        <v-row>
+          <v-spacer></v-spacer>
+          <v-col cols="4" data-app>
+            <v-autocomplete
+              v-model="formulario.conteudo"
+              :items="conteudos"
+              solo
+              filled
+              label="Conteúdos"
+            ></v-autocomplete>
+          </v-col>
+          <v-spacer></v-spacer>
+        </v-row>
+      </div>
+      <div class="box">
         Adicione um Título para este Formulário<br />
         <input id="text" type="text" v-model="formulario.titulo" />
       </div>
@@ -112,13 +138,32 @@
 </template>
 
 <script>
+import { mapActions, mapState } from "vuex";
 export default {
   data: () => ({
     formulario: {},
+    disciplina: "",
+    conteudos: [],
     perguntas: [],
     alternativas: [],
   }),
+  watch: {
+    async disciplina(novaDisciplina, antigaDisciplina) {
+      if (novaDisciplina !== antigaDisciplina) {
+        this.conteudos = [];
+        await this.buscarConteudos(novaDisciplina);
+        for (let conteudo in this.todosConteudos) {
+          this.conteudos.push(this.todosConteudos[conteudo].nome);
+        }
+      }
+    },
+  },
+  computed: {
+    ...mapState("conteudo", ["todosConteudos"]),
+  },
   methods: {
+    ...mapActions("conteudo", ["buscarConteudos"]),
+
     adicionarPergunta() {
       this.perguntas.push({});
       this.alternativas.push({
