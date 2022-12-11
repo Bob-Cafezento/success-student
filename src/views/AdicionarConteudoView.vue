@@ -16,25 +16,35 @@
           ao site:
         </h3>
         <br />
-        <select>
-          <option value="valor" selected></option>
-          <option value="valor1">Português</option>
-          <option value="valor2">Matemática</option>
-          <option value="valor3">História</option>
-          <option value="valor4">Geografia</option></select
+        <select v-model="conteudo.disciplina">
+          <option value="Português">Português</option>
+          <option value="Matemática">Matemática</option>
+          <option value="História">História</option>
+          <option value="Geografia">Geografia</option></select
         ><br />
         <h3>Adicione um título</h3>
         <br />
-        <input type="text" v-model="conteudo.titulo" /><br />
+        <input type="text" v-model="conteudo.nome" /><br />
         <h3>Adicione um Paragráfo</h3>
         <br />
         <textarea v-model="conteudo.paragrafo" wrap="hard"></textarea><br />
+      </div>
+      <div class="box">
+        Quando o Conteúdo estiver pronto, clique abaixo para salvar:<br /><br />
+        <input
+          type="submit"
+          @click="adicionarConteudo"
+          class="submit"
+          value="Salvar"
+        />
       </div>
     </main>
 
     <h1>Visão Prévia do conteúdo</h1>
 
     <main class="resumo">
+      <h4 class="paragrafo">{{ conteudo.disciplina }}</h4>
+      <br />
       <h1 class="titulo">{{ conteudo.titulo }}</h1>
       <br />
       <h4 class="paragrafo">{{ conteudo.paragrafo }}</h4>
@@ -43,11 +53,24 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
-  data() {
-    return {
-      conteudo: {},
-    };
+  data: () => ({
+    conteudo: {},
+  }),
+  methods: {
+    ...mapActions("conteudo", ["criarConteudo"]),
+
+    adicionarConteudo() {
+      try {
+        this.criarConteudo(this.conteudo);
+        alert("Conteúdo adicionado com sucesso!");
+        this.$router.push({ name: this.conteudo.disciplina });
+        this.conteudo = {};
+      } catch (e) {
+        console.log(e);
+      }
+    },
   },
 };
 </script>

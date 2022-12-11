@@ -34,23 +34,23 @@ const routes = [
       },
       {
         path: "/historia",
-        name: "historia",
-        component: () => import("../views/HistoriaView.vue"),
+        name: "História",
+        component: () => import("../views/disciplinas/HistoriaView.vue"),
       },
       {
         path: "/geografia",
-        name: "geografia",
-        component: () => import("../views/GeografiaView.vue"),
+        name: "Geografia",
+        component: () => import("../views/disciplinas/GeografiaView.vue"),
       },
       {
         path: "/matematica",
-        name: "matematica",
-        component: () => import("../views/MatematicaView.vue"),
+        name: "Matemática",
+        component: () => import("../views/disciplinas/MatematicaView.vue"),
       },
       {
         path: "/portugues",
-        name: "portugues",
-        component: () => import("../views/PortuguesView.vue"),
+        name: "Português",
+        component: () => import("../views/disciplinas/PortuguesView.vue"),
       },
       {
         path: "/adicionarconteudo",
