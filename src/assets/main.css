@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: garamond;
 }
 :root {
   --verde-escuro: #3b6863;
@@ -189,8 +190,64 @@ box-conta :hover {
   cursor: pointer;
 }
 
+label {
+  font-size: 20px;
+}
+main#conta {
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
+}
+.botao {
+  background-color: #8f8f8f;
+  border: 2px solid #8f8f8f;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+i {
+  font-weight: bold;
+}
+h3 {
+  font-size: 30px;
+  font-weight: bolder;
+  font-style: italic;
+}
+main#conta {
+  display: flex;
+  flex-direction: row;
+}
+.paragrafo{
+  font-size: 22px;
+  font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+.titulo{
+  font-size: 45px;
+}
+
 /*Aqui nós temos uma folha de estilo secundária que garante a responsividade do site em celulares*/
 @media screen and (max-width: 600px) {
+  h1{
+    font-size: 30px;
+    padding-top: 20px;
+  }
+  h2{
+    line-height: 41px;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  label{
+    font-size: 25px;
+  }
+  p{
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+    text-align: left;
+  }
   header {
     box-shadow: 1px -5px 20px 4px #1f1f1f;
     display: flex;
@@ -199,6 +256,7 @@ box-conta :hover {
     padding: 2%;
     font-size: 40%;
   }
+
   .label {
     height: 16px;
     width: 30px;
@@ -232,10 +290,6 @@ box-conta :hover {
   .header-item:hover {
     font-weight: normal;
   }
-  h1 {
-    font-size: 60%;
-    text-align: center;
-  }
   main {
     margin: 5%;
     border-radius: 15px;
@@ -247,38 +301,18 @@ box-conta :hover {
     text-align: center;
     margin: 20px;
     padding: 20px;
-    max-width: 300px;
-    min-width: 70%;
+    width: 90%;
     box-shadow: -2px 2px 5px black;
   }
-}
-label {
-  font-size: 20px;
-}
-main#conta {
-  flex-direction: column;
-  align-items: center;
-  font-size: 40px;
-}
-.botao {
-  background-color: #8f8f8f;
-  border: 2px solid #8f8f8f;
-  color: #fff;
-  font-size: 14px;
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-}
-i {
-  font-weight: bold;
-}
-h3 {
-  font-size: 30px;
-  font-weight: bolder;
-  font-style: italic;
-}
-main#conta {
-  display: flex;
-  flex-direction: row;
+  .box img{
+    width: 45vw;
+  }
+  /*Adicionar Conteúdo e adicionar Formulário*/
+  .paragrafo{
+    font-size: 18px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .titulo{
+    font-size: 30px;
+  }
 }

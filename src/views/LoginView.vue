@@ -65,17 +65,11 @@ export default {
 </template>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
 .body {
   width: 100%;
   min-height: 100vh;
-  background: url(@/assets/imagens/grupo-de-estudo-ConversImagem.jpg) no-repeat
-    center center;
+  background: url(@/assets/imagens/grupo-de-estudo-ConversImagem.jpg) 
+  no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;

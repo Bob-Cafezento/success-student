@@ -36,4 +36,6 @@ export default {
   width: 90%;
   color: black;
 }
+
+
 </style>

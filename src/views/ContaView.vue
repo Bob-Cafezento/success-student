@@ -51,10 +51,11 @@ export default {
 
 <template>
   <div id="abrangent">
+    <h1>SUCCESS STUDENT</h1>
     <main id="conta">
       <div class="big-box-conta">
         <img src="@/assets/imagens/CONTA.png" width="200" />
-        Tenha controle da sua conta
+        <h1 id="conteudo">Tenha controle da sua conta</h1>
       </div>
       <div class="big-box">
         <h2 class="line">Informações pessoais</h2>
@@ -94,13 +95,15 @@ export default {
 </template>
 
 <style scoped>
+
+h1#conteudo{
+  font-size: 60px;
+}
 .line {
   line-height: 1.2em;
   margin: 0.4em;
 }
-.big-box-conta img {
-  z-index: inherit;
-}
+
 .box {
   background-color: var(--verde-claro);
   font-size: 35px;
@@ -178,5 +181,18 @@ input {
 }
 h2 {
   font-size: 40px;
+}
+@media screen and (max-width: 600px) {
+  h1#conteudo{
+  font-size: 30px;
+  }
+  img{
+    margin-top: 20px;    
+  }
+  .big-box{
+    width: 90%;
+    margin: none;
+    margin-left: 0;
+  }
 }
 </style>
