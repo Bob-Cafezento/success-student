@@ -62,11 +62,6 @@ const routes = [
         name: "adicionarformulario",
         component: () => import("../views/AdicionarFormularioView.vue"),
       },
-      {
-        path: "/conteudo",
-        name: "conteudo",
-        component: () => import("../views/ConteudoView.vue")
-      }
     ],
   },
   {
