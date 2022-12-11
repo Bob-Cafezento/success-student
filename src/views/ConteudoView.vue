@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  data() {},
+  data: () => ({}),
 };
 </script>
 
@@ -22,6 +22,5 @@ export default {
 .box {
   width: 90%;
   color: black;
-
 }
 </style>

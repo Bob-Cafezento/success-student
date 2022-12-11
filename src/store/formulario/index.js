@@ -14,8 +14,8 @@ export const formulario = {
     },
   },
   actions: {
-    async buscarFormularios({ commit }) {
-      const formularios = await formularioService.read();
+    async buscarFormularios({ commit }, idConteudo) {
+      const formularios = await formularioService.read(idConteudo);
       commit("setFormularios", formularios);
     },
     async criarFormulario({ dispatch }, formInfo) {

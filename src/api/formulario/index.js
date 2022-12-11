@@ -5,8 +5,8 @@ class FormularioService {
     const { data } = await axios.post("api/formularios/", formInfo);
     return data;
   }
-  async read() {
-    const { data } = await axios.get("api/formularios/");
+  async read(idConteudo) {
+    const { data } = await axios.get(`api/formularios/?conteudo=${idConteudo}`);
     return data;
   }
   async update(idForm, formInfo) {
