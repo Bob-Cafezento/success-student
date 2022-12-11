@@ -182,9 +182,13 @@ input {
 h2 {
   font-size: 40px;
 }
+
 @media screen and (max-width: 600px) {
   h1#conteudo{
   font-size: 30px;
+  }
+  h2{
+    font-size: 20px;
   }
   img{
     margin-top: 20px;    
