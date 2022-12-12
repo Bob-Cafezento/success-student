@@ -4,7 +4,7 @@
 
     <main>
       <h2>Adicione conteúdo</h2>
-      <br />
+
       <h3>
         Nesta página escreva um novo resumo, e informe a que matéria o mesmo
         pertence:
@@ -76,6 +76,11 @@ export default {
 </script>
 
 <style scoped>
+main{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
 .box {
   width: 100%;
   font-size: 25px;
@@ -95,6 +100,9 @@ export default {
 h1 {
   padding: 0;
   margin-top: 20px;
+}
+h2 {
+  margin-bottom: 25px;
 }
 select {
   width: 400px;
@@ -138,13 +146,18 @@ textarea {
 textarea:hover {
   box-shadow: 0 4px 60px var(--preto-claro);
 }
+
 @media screen and (max-width: 600px) {
   h3 {
-    font-size: 25px;
+    font-size: 16px;
   }
-
+  h2{
+    font-size: 20px;
+    margin: 20px;
+    margin-bottom: 15px
+  }
   h1{
-    font-size: 28px;
+    font-size: 15px;
   }
   input {
     width: 80%;
@@ -152,7 +165,9 @@ textarea:hover {
   }
   select {
     width: 80%;
-    font-size: 20px;
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 20px
   }
   textarea {
     width: 90%;
@@ -165,7 +180,16 @@ textarea:hover {
     font-size: 20px;
   }
   main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
+    
+  }
+  .box{
+    width: 90%;
+    font-size: 20px;
+    margin-top: 20px;
   }
 }
 </style>

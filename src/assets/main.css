@@ -37,9 +37,7 @@ header {
   text-align: center;
   padding: 0;
 }
-.header{
-  background-color: white;
-}
+
 header a {
   color: var(--cinza);
   padding: 0%;
@@ -48,9 +46,7 @@ a {
   text-decoration: none;
   color: var(--preto-escuro);
 }
-a#header {
-  width: 8.5%;
-}
+
 img {
   z-index: 2;
 }
@@ -261,7 +257,7 @@ main#conta {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2%;
+
     font-size: 40%;
   }
 
@@ -305,7 +301,8 @@ main#conta {
     box-shadow: -2px 2px 5px black;
   }
   .box {
-    font-size: 70%;
+    font-size: 20px;
+    justify-content: center;
     text-align: center;
     margin: 20px;
     padding: 20px;

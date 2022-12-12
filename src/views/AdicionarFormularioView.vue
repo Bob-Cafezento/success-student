@@ -210,6 +210,7 @@ export default {
 
 .box {
   width: 100%;
+
 }
 
 .submit {
@@ -320,9 +321,8 @@ body::-webkit-scrollbar-thumb {
   h3 {
     font-size: 25px;
   }
-
   h1{
-    font-size: 28px;
+    font-size: 15px;
   }
   input {
     width: 80%;

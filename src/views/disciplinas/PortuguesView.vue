@@ -1,7 +1,8 @@
 <template>
   <div id="abrangent">
+    <h1>SUCCESS STUDENT</h1>
     <main class="resumo">
-      <div class="box" @click="$router.push('/adicionarformulario')">
+      <div class="box" id="primeiro" @click="$router.push('/adicionarformulario')">
         Clique aqui para adicionar um formulário ao seu conteúdo <br />
       </div>
       <br />
@@ -100,6 +101,15 @@ export default {
 .box {
   width: 90%;
   color: black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  
+}
+.box#primeiro{
+  margin-top: 20px;
 }
 .activator {
   margin: 100px;

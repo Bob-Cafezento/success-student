@@ -65,6 +65,7 @@ export default {
 </template>
 
 <style scoped>
+
 .body {
   width: 100%;
   min-height: 100vh;
@@ -91,6 +92,7 @@ div#cadastro {
   width: 400px;
   max-width: 100%;
   overflow: hidden;
+  padding: 0;
 }
 
 .header {
