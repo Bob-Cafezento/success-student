@@ -20,6 +20,7 @@
             <v-autocomplete
               v-model="formulario.conteudo"
               :items="conteudos"
+              hide-details
               solo
               filled
               label="Conteúdos"
@@ -138,14 +139,18 @@
 </template>
 
 <script>
+// import axios from "axios";
 import { mapActions, mapState } from "vuex";
+
 export default {
   data: () => ({
-    formulario: {},
-    disciplina: "",
-    conteudos: [],
+    formulario: {
+      perguntas: [],
+    },
     perguntas: [],
     alternativas: [],
+    conteudos: [],
+    disciplina: "",
   }),
   watch: {
     async disciplina(novaDisciplina, antigaDisciplina) {
@@ -164,8 +169,22 @@ export default {
   methods: {
     ...mapActions("conteudo", ["buscarConteudos"]),
 
+    async submitForm() {
+      try {
+        for (let i = 0; i < this.perguntas.length; i++) {
+          this.perguntas[i]["alternativas"] = this.alternativas[i];
+        }
+        this.formulario["perguntas"] = this.perguntas;
+        console.log(this.formulario);
+        // await axios.post("api/formularios/", this.formulario);
+      } catch (e) {
+        console.log(e);
+      }
+    },
     adicionarPergunta() {
-      this.perguntas.push({});
+      this.perguntas.push({
+        alternativas: [],
+      });
       this.alternativas.push({
         alternativa1: {},
         alternativa2: {},
@@ -180,10 +199,6 @@ export default {
       this.alternativas = this.alternativas.filter(
         (x, indexAltertivas) => indexAltertivas != perguntaDeletada
       );
-    },
-    submitForm() {
-      console.log(this.perguntas);
-      console.log(this.alternativas);
     },
   },
 };
