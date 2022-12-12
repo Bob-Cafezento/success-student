@@ -14,55 +14,18 @@
   --preto-escuro: #0f1114;
   --preto-claro: #282828;
 }
-body {
+
+/* body {
   background-color: var(--verde-claro);
   background-attachment: fixed;
   font-family: garamond;
   font-size: 40px;
   margin: 0%;
-}
-/*Cabecalho*/
-header {
-  position: sticky;
-  top: 0;
-  background-color: var(--verde-escuro);
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 1%;
-  font-size: 70%;
-  box-shadow: 0 2px 20px var(--preto-claro);
-}
-.header-item {
-  text-align: center;
-  padding: 0;
-}
+} */
 
-header a {
-  color: var(--cinza);
-  padding: 0%;
-}
-a {
-  text-decoration: none;
-  color: var(--preto-escuro);
-}
 
-img {
-  z-index: 2;
-}
-.progress {
-  background-color: var(--branco-esverdeado);
-  color: #0f1114;
-  padding: 1% 2% 1% 2%;
-  border-radius: 40px;
-  box-shadow: 0 1px 10px #282828;
-}
-.progress:hover {
-  box-shadow: 0 1px 10px #282828, 0 1px 20px #1f1f1f, 0 1px 30px #0f1114;
-}
-.header-item:hover {
-  text-shadow: 0 5px 10px #7eb3a9;
-}
+
+
 h1 {
   font-size: 40px;
   text-align: center;
@@ -233,7 +196,7 @@ main#conta {
 }
 
 /*Aqui nós temos uma folha de estilo secundária que garante a responsividade do site em celulares*/
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   h1{
     font-size: 30px;
     padding-top: 20px;
@@ -312,7 +275,7 @@ main#conta {
   .box img{
     width: 45vw;
   }
-  /*Adicionar Conteúdo e adicionar Formulário*/
+  /*Adicionar Conteúdo e adicionar Formulário*/ /*
   .paragrafo{
     font-size: 18px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -320,4 +283,4 @@ main#conta {
   .titulo{
     font-size: 30px;
   }
-}
+} */
