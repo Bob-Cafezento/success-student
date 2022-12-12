@@ -14,7 +14,8 @@
       <div class="box">
         Selecione qual será a conteúdo para este Formulário<br />
         <br />
-        <v-row>
+        <v-spacer>
+          <v-row>
           <v-spacer></v-spacer>
           <v-col cols="4" data-app>
             <v-autocomplete
@@ -28,6 +29,7 @@
           </v-col>
           <v-spacer></v-spacer>
         </v-row>
+        </v-spacer>
       </div>
       <div class="box">
         Adicione um Título para este Formulário<br />
@@ -205,17 +207,11 @@ export default {
 </script>
 
 <style scoped>
-.resumo {
-  display: flex;
-  align-items: flex-start;
-  white-space: pre-line;
-}
+
 .box {
   width: 100%;
 }
-.titulo {
-  font-size: 50px;
-}
+
 .submit {
   background-color: rgb(18, 151, 177);
 }
@@ -238,7 +234,20 @@ export default {
   font-size: 30px;
   box-shadow: none;
 }
-
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin: 0;
+}
+.small{
+  width: 11%;
+  border: none;
+}
+.small:hover{
+  box-shadow: none;
+}
 h1 {
   padding: 0;
   margin-top: 20px;
@@ -280,7 +289,8 @@ input#text:hover {
   box-shadow: 0 4px 40px var(--preto-claro);
 }
 textarea {
-  margin: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   width: 60%;
   height: 200px;
   border-radius: 10px;
@@ -305,5 +315,29 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--verde-claro);
   border-radius: 7px;
   border: 2px solid var(--preto-claro);
+}
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 25px;
+  }
+
+  h1{
+    font-size: 28px;
+  }
+  input {
+    width: 80%;
+    font-size: 25px;
+  }
+  select {
+    width: 80%;
+    font-size: 20px;
+  }
+  textarea {
+    width: 90%;
+    font-size: 20px;
+  }
+  main{
+    width: 80%;
+  }
 }
 </style>

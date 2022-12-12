@@ -109,7 +109,7 @@ h2 {
 
 .form-control {
   margin-bottom: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 0;
   position: relative;
 }
 

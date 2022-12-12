@@ -9,7 +9,7 @@
         Nesta página escreva um novo resumo, e informe a que matéria o mesmo
         pertence:
       </h3>
-      <br />
+
       <div class="box">
         <h3>
           Selecione qual será a disciplina do conteúdo que você deseja adicionar
@@ -78,6 +78,7 @@ export default {
 <style scoped>
 .box {
   width: 100%;
+  font-size: 25px;
 }
 .resumo {
   white-space: pre-line;
@@ -87,6 +88,9 @@ export default {
 }
 .paragrafo {
   font-size: 35px;
+}
+.submit {
+  background-color: rgb(18, 151, 177);
 }
 h1 {
   padding: 0;
@@ -123,7 +127,7 @@ input:hover {
   box-shadow: 0 4px 60px var(--preto-claro);
 }
 textarea {
-  width: 1000px;
+  width: 80%;
   height: 100px;
   border-radius: 10px;
   font-family: Garamond;
@@ -133,5 +137,35 @@ textarea {
 }
 textarea:hover {
   box-shadow: 0 4px 60px var(--preto-claro);
+}
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 25px;
+  }
+
+  h1{
+    font-size: 28px;
+  }
+  input {
+    width: 80%;
+    font-size: 25px;
+  }
+  select {
+    width: 80%;
+    font-size: 20px;
+  }
+  textarea {
+    width: 90%;
+    font-size: 20px;
+  }
+  .titulo {
+    font-size: 30px;
+  }
+  .paragrafo {
+    font-size: 20px;
+  }
+  main{
+    width: 80%;
+  }
 }
 </style>

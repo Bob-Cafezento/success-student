@@ -24,6 +24,7 @@ export default {
 
 <template>
   <div class="body">
+    
     <div class="container">
       <div class="header">
         <h2>Crie uma conta no Success Student</h2>
@@ -96,13 +97,6 @@ export default {
 </template>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .body {
   width: 100%;
   min-height: 100vh;
@@ -123,31 +117,39 @@ div#cadastro {
   cursor: pointer;
 }
 .container {
-  background-color: #3b6863;
+  
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 400px;
   max-width: 100%;
   overflow: hidden;
+  
 }
 
 .header {
-  background-color: #eee;
+  background-color: white;
   padding: 20px;
   color: #000000;
 }
 
+h2 {
+  line-height: 1.4em;
+}
+
 .form {
   padding: 20px;
+  background-color: #3b6863;
 }
 
 .form-control {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
   position: relative;
 }
 
 .form-control label {
   display: inline-block;
+  margin-bottom: 5px;
 }
 
 .form-control input {
@@ -182,32 +184,5 @@ div#cadastro {
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
-}
-
-/* Error and Success */
-.form-control.success input {
-  border-color: #2ecc71;
-}
-
-.form-control.error input {
-  border-color: #e74c3c;
-}
-
-.form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
-}
-
-.form-control.error small {
-  visibility: visible;
-  color: #e74c3c;
-}
-.form button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 </style>

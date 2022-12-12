@@ -188,15 +188,25 @@ h2 {
   font-size: 30px;
   }
   h2{
-    font-size: 20px;
+    font-size: 25px;
   }
   img{
     margin-top: 20px;    
+  }
+  input{
+    font-size: 20px;
+  }
+  .box{
+    font-size: 22px;
+    
   }
   .big-box{
     width: 90%;
     margin: none;
     margin-left: 0;
+  }
+  main{
+    padding-bottom: 15px;
   }
 }
 </style>
