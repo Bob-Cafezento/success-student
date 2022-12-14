@@ -23,9 +23,6 @@
   margin: 0%;
 } */
 
-
-
-
 h1 {
   font-size: 40px;
   text-align: center;
@@ -87,7 +84,6 @@ main {
   box-shadow: 0 5px 20px #282828;
 }
 .container-item {
-
   color: #9e9e9e;
   display: block;
   padding: 2%;

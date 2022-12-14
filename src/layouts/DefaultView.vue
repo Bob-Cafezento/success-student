@@ -1,14 +1,32 @@
 <template>
   <div :style="{background: $vuetify.theme.themes.light.background}">
-    <v-app-bar color="primary"  elevation="4" prominent>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>SUCCESS STUDENT</v-toolbar-title>
-      <img src="@/assets/imagens/logo-branca.png" title="Logo" width="125"/>
-    </v-app-bar>
+    <header>
+      <RouterLink to="/" id="header">
+        <img src="@/assets/imagens/logo-branca.png" title="Logo" width="125" />
+      </RouterLink>
 
+      <div class="header-item">
+        <RouterLink id="cabecalho" class="cinza" to="/login">Login</RouterLink>
+      </div>
+      <div class="header-item">
+        <RouterLink id="cabecalho" to="/cadastro">Cadastro</RouterLink>
+      </div>
+
+      <div class="header-item">
+        <RouterLink id="cabecalho" to="/conta">Conta</RouterLink>
+      </div>
+
+      <div class="header-item">
+        <RouterLink id="cabecalho" to="/ajuda">Ajuda</RouterLink>
+      </div>
+      <div class="header-item">
+        <RouterLink id="cabecalho" @click="sair" to="/login">Sair</RouterLink>
+      </div>
+    </header>
     <router-view></router-view>
   </div>
 </template>
+
 
 <script>
 import { mapActions } from 'vuex'
@@ -39,13 +57,35 @@ export default {
 </script>
 
 <style>
-img {
-  background-color: transparent;
+
+header {
+  color: #9E9E9E;
+  position: sticky;
+  top: 0;
+  background-color: var(--verde-escuro);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1%;
+  font-size: 25px;
+  box-shadow: 0 2px 20px var(--preto-claro);
 }
-v-card {
-  width: 100%;
-  
+.header-item {
+  text-align: center;
+  padding: 0;
 }
+#cabecalho{
+  text-decoration: none;
+  color: black;
+}
+header a{
+  color: #9E9E9E;
+}
+.header-item:hover {
+  text-shadow: 0 5px 10px #7eb3a9;
+  color: #9E9E9E
+}
+
 @media screen and (max-width: 600px) {
 }
 </style>
