@@ -62,11 +62,17 @@ const routes = [
         name: "adicionarformulario",
         component: () => import("../views/AdicionarFormularioView.vue"),
       },
+      {
+        path: "/formulario",
+        name: "formulario",
+        component: () => import("../views/disciplinas/FormularioView.vue"),
+      },
     ],
   },
+
   {
     path: "/",
-    component: () => import("@/layouts/BlankView.vue"),
+    component: () => import("@/layouts/BlankView.vue"), 
     meta: {
       auth: false,
     },
@@ -83,6 +89,8 @@ const routes = [
       },
     ],
   },
+
+  
 ];
 
 const router = new VueRouter({

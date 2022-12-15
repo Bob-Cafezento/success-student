@@ -106,7 +106,7 @@ export default {
 .button{
   font-size: 25px;
   border: 1px black solid;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: var(--verde-claro);
   color: black;
   margin-top: 30px;
