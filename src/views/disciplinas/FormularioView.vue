@@ -4,13 +4,37 @@
     <main>
       <h1>Titulo</h1>
       <h2 class="start">Enunciado</h2>
-      <h3 class="start"><input type="radio" class="radio" name="pergunta"/>Alternativa1</h3>
-      <h3 class="start"><input type="radio" class="radio" name="pergunta"/>Alternativa2</h3>
-      <h3 class="start"><input type="radio" class="radio" name="pergunta"/>Alternativa3</h3>
-      <h3 class="start"><input type="radio" class="radio" name="pergunta"/>Alternativa4</h3>
-      <div class="button" @click="router.push('/editarformulario')">
+      <h3 class="start">
+        <input type="radio" class="radio" name="pergunta"/>
+        Alternativa1
+      </h3>
+      <h3 class="start">
+        <input type="radio" class="radio" name="pergunta"/>
+        Alternativa2
+      </h3>
+      <h3 class="start">
+        <input type="radio" class="radio" name="pergunta"/>
+        Alternativa3
+      </h3>
+      <h3 class="start">
+        <input type="radio" class="radio" name="pergunta"/>
+        Alternativa4
+      </h3>
+
+      <div class="box">
+        Quando o Conteúdo estiver pronto, clique abaixo para salvar:<br /><br />
+            <input
+            type="submit"
+            @click="adicionarConteudo"
+            class="submit"
+            value="Salvar"
+            />
+      </div>
+
+      <div class="button" @click="$router.push('/editarformulario')">
         Editar Formulário
       </div>
+
     </main>
   </div>
 </template>
@@ -30,6 +54,10 @@ export default {
 </script>
 
 <style scoped>
+.box{
+    width: 100%;
+    align-self: center;
+}
 .button{
   font-size: 25px;
   border: 1px black solid;
@@ -49,12 +77,16 @@ main {
 .start {
   align-self: flex-start;
   margin: 20px;
+  display: flex;
+  align-items: center;
+  
 }
 h2 {
   font-size: 32px;
 }
 h3 {
   font-size: 25px;
+  margin-left: 20px;
 }
 .radio {
   size-adjust: border;
@@ -65,5 +97,17 @@ h3 {
   font-family: Garamond;
   font-size: 30px;
   box-shadow: none;
+}
+input {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 400px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  font-family: Garamond;
+  font-size: 30px;
+  box-shadow: 0 2px 20px var(--preto-claro);
+  background-color: white;
 }
 </style>

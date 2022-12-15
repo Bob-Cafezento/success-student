@@ -67,6 +67,11 @@ const routes = [
         name: "formulario",
         component: () => import("../views/disciplinas/FormularioView.vue"),
       },
+      {
+        path: "/editarformulario",
+        name: "editarformulario",
+        component: () => import("../views/disciplinas/EditarFormularioView.vue"),
+      }
     ],
   },
 
