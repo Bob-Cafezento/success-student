@@ -16,19 +16,19 @@
         <br />
         <v-spacer>
           <v-row>
-          <v-spacer></v-spacer>
-          <v-col cols="4" data-app>
-            <v-autocomplete
-              v-model="formulario.conteudo"
-              :items="conteudos"
-              hide-details
-              solo
-              filled
-              label="Conteúdos"
-            ></v-autocomplete>
-          </v-col>
-          <v-spacer></v-spacer>
-        </v-row>
+            <v-spacer></v-spacer>
+            <v-col cols="4" data-app>
+              <v-autocomplete
+                v-model="formulario.conteudo"
+                :items="conteudos"
+                hide-details
+                solo
+                filled
+                label="Conteúdos"
+              ></v-autocomplete>
+            </v-col>
+            <v-spacer></v-spacer>
+          </v-row>
         </v-spacer>
       </div>
       <div class="box">
@@ -137,8 +137,6 @@
         />
       </div>
     </main>
-
-    
   </div>
 </template>
 
@@ -176,7 +174,18 @@ export default {
     async submitForm() {
       try {
         for (let i = 0; i < this.perguntas.length; i++) {
-          this.perguntas[i]["alternativas"] = this.alternativas[i];
+          this.perguntas[i].alternativas.push(
+            this.alternativas[i].alternativa1
+          );
+          this.perguntas[i].alternativas.push(
+            this.alternativas[i].alternativa2
+          );
+          this.perguntas[i].alternativas.push(
+            this.alternativas[i].alternativa3
+          );
+          this.perguntas[i].alternativas.push(
+            this.alternativas[i].alternativa4
+          );
         }
         this.formulario["perguntas"] = this.perguntas;
         console.log(this.formulario);
@@ -209,10 +218,8 @@ export default {
 </script>
 
 <style scoped>
-
 .box {
   width: 100%;
-
 }
 
 .submit {
@@ -237,18 +244,18 @@ export default {
   font-size: 30px;
   box-shadow: none;
 }
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 200px;
   margin: 0;
 }
-.small{
+.small {
   width: 11%;
   border: none;
 }
-.small:hover{
+.small:hover {
   box-shadow: none;
 }
 h1 {
@@ -323,7 +330,7 @@ body::-webkit-scrollbar-thumb {
   h3 {
     font-size: 25px;
   }
-  h1{
+  h1 {
     font-size: 15px;
   }
   input {
@@ -338,7 +345,7 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
     font-size: 20px;
   }
-  main{
+  main {
     width: 80%;
   }
 }
