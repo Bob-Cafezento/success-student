@@ -10,6 +10,14 @@
         <h1 class="titulo">{{ conteudo.nome }}</h1>
         <br />
         <h4 class="paragrafo">{{ conteudo.paragrafo }}</h4>
+
+        <v-btn @click="click=true"> 
+          Hora de testar os nossos conhecimentos, através de um questionário<br>
+        </v-btn>
+        
+        <div v-if="click">
+          Welcome back!
+        </div>
       </div>
       <v-row justify="center">
         <v-dialog
@@ -79,6 +87,7 @@ export default {
     return {
       dialogm1: "",
       dialog: false,
+      click: false,
     };
   },
   created() {
