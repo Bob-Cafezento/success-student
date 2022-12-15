@@ -11,6 +11,10 @@
 
         <br />
         <h4 class="paragrafo">{{ conteudo.paragrafo }}</h4>
+
+        <div class="button" @click="$router.push('/formulario')">
+          Vamos usar a cabeça, clique aqui, e faça um questionário rápido para ver se entendeu o assunto
+        </div>
       </div>
       <!--Dialog form-->
       <v-row justify="center">
@@ -98,6 +102,18 @@ export default {
 </script>
 
 <style scoped>
+
+.button{
+  font-size: 25px;
+  border: 1px black solid;
+  border-radius: 10px;
+  background-color: var(--verde-claro);
+  color: black;
+  margin-top: 30px;
+}
+.button:hover{
+  box-shadow: 0 4px 60px var(--preto-claro);
+}
 .box {
   width: 90%;
   color: black;
