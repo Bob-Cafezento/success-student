@@ -11,13 +11,10 @@
         <br />
         <h4 class="paragrafo">{{ conteudo.paragrafo }}</h4>
 
-        <v-btn @click="click=true"> 
-          Hora de testar os nossos conhecimentos, através de um questionário<br>
-        </v-btn>
-        
-        <div v-if="click">
-          Welcome back!
+        <div class="button" @click="$router.push('/formulario')">
+          Vamos usar a cabeça, clique aqui, e faça um questionário rápido para ver se entendeu o assunto
         </div>
+
       </div>
       <v-row justify="center">
         <v-dialog
@@ -88,7 +85,14 @@ export default {
       dialogm1: "",
       dialog: false,
       click: false,
-    };
+      formulario: {
+        perguntas: [],
+      },
+      perguntas: [],
+      alternativas: [],
+      conteudos: [],
+      disciplina: "",
+      };
   },
   created() {
     this.esvaziarConteudos();
@@ -104,6 +108,17 @@ export default {
 };
 </script>
 <style scoped>
+.button{
+  font-size: 25px;
+  border: 1px black solid;
+  border-radius: 10px;
+  background-color: var(--verde-claro);
+  color: black;
+  margin-top: 30px;
+}
+.button:hover{
+  box-shadow: 0 4px 60px var(--preto-claro);
+}
 .box {
   width: 90%;
   color: black;

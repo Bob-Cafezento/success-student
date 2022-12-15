@@ -143,7 +143,7 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import { mapActions, mapState } from "vuex";
 
 export default {
@@ -180,7 +180,7 @@ export default {
         }
         this.formulario["perguntas"] = this.perguntas;
         console.log(this.formulario);
-        // await axios.post("api/formularios/", this.formulario);
+        await axios.post("api/formularios/", this.formulario);
       } catch (e) {
         console.log(e);
       }
